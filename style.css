@@ -13,11 +13,41 @@ body{
 }
 
 .calculator{
+    height: clamp(500px,600px,650px);
+    width: clamp(420px,420px,420px);
     background-color: pink;
     color: white;
+}
+.calculator .screen{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 80px;
+    text-align: right;
+    background-color: black;
+    padding: 5px;
+    margin: 10px;
+    height: 80px;
+    flex-shrink: 1;
+    flex-basis: 380px;
+    flex-grow: 0;
+}
+.calculator .buttons{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
+}
+
+.calculator .buttons .numbers{
+    width: 75%;
+}
+.calculator .buttons button{
+    margin: 10px;
+    color:black;
+    width: 20%;
+}
+.calculator .buttons .operators{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
 }
 
 #footer{
