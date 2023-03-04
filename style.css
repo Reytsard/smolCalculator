@@ -31,9 +31,15 @@ body{
     flex: 1;
 }
 #calculator .rowButtons .button{
-    width: calc(100% / 4);
     flex: 1;
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 4);
+}
+#calculator .rowButtons .button button{
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
-    text-align: center;
+    background-color: White;
 }
