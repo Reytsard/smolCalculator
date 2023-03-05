@@ -52,9 +52,22 @@ body{
     border-radius: 10px;
     background-color: white;   
 }
-.button .operator button{
+.operator{
     background-color: purple;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+#Screen .display{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-family: var(--pixel-Font);
+    font-size: 32px;
+    color: white;
+    text-align: right;
+    border: 0;
 }

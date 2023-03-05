@@ -1,6 +1,16 @@
 //main
 let display = document.querySelector('#Screen');
+console.log(display.innerHTML);
+let buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click',() => {
+        button.value == "Reset" ? display.innerHTML = "" :
+        button.value == "Clear" ? /*add a function here to remove last index of string:*/ function(){}:
+        display.innerHTML = display.textContent.trim()+button.value;
+    }) 
+});
 
+console.log(buttons);
 //functions
 function add(a,b){
     return a+b;
