@@ -7,10 +7,11 @@
         <title>Calculator | Rey</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
         <link rel="stylesheet" href="style.css">
+        <script src="index.js" defer></script>
     </head>
     <body>
         <div id="calculator">
-            <div id="Screen">Test</div>
+            <div id="Screen" ><input class="display" type="text"></input></div>
             <div class="buttons">
                 <div class="rowButtons">
                 <div class="button"><button>Reset</button></div>
@@ -20,25 +21,25 @@
                 <div class="button"><button>7</button></div>
                 <div class="button"><button>8</button></div>
                 <div class="button"><button>9</button></div>
-                <div class="button"><button>*</button></div>
+                <div class="button"><button class="operator">*</button></div>
             </div>
             <div class="rowButtons">
                 <div class="button"><button>4</button></div>
                 <div class="button"><button>5</button></div>
                 <div class="button"><button>6</button></div>
-                <div class="button"><button>/</button></div>
+                <div class="button"><button class="operator">/</button></div>
             </div>
             <div class="rowButtons">
                 <div class="button"><button>1</button></div>
                 <div class="button"><button>2</button></div>
                 <div class="button"><button>3</button></div>
-                <div class="button"><button>+</button></div>
+                <div class="button"><button class="operator">+</button></div>
             </div>
             <div class="rowButtons">
                 <div class="button"><button>0</button></div>
                 <div class="button"><button>.</button></div>
                 <div class="button"><button>(-)</button></div>
-                <div class="button"><button>=</button></div>
+                <div class="button"><button class="operator">=</button></div>
             </div>
         </div>
     </div>
