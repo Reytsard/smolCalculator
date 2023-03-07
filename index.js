@@ -40,8 +40,9 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         if(button.value == '-' || button.value == '+' || button.value == '*' || button.value == '/' ){
             switch(button.value){
-                case '+': a = Number(display);
-                          
+                case '+': display.textContent = add(a,b);
+                          break;
+                case '-':      
             }
         }else if(button.value == '0' || button.value == '1' || button.value == '2' || button.value == '3' || button.value == '4' || button.value == '5' || button.value == '6' || button.value == '7' || button.value == '8' || button.value == '9'){
             display.textContent += button.value;
