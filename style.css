@@ -15,16 +15,14 @@ body{
     display: flex;
     flex-direction: column;
 }
-#calculator #Screen{
-    display: flex;
-    justify-content: end;
-    align-items: center;
+#calculator .screen{
     margin: 10px;
     height: 70px;
     background-color: black;
     font-family: var(--pixel-Font);
-    font-size: 32px;
+    font-size: 30px;
     color: white;
+    text-align: right;
 }
 #calculator .buttons{
     margin: 10px;

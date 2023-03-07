@@ -1,17 +1,31 @@
 //main
-let display = document.querySelector('#Screen');
-console.log(display.innerHTML);
+let display = document.querySelector('.screen');
 let buttons = document.querySelectorAll('button');
+let a = 0;
+let b = 0;
 buttons.forEach(button => {
-    button.addEventListener('click',() => {
-        button.value == "Reset" ? display.innerHTML = "" :
-        button.value == "Clear" ? /*add a function here to remove last index of string:*/ function() {}:
-        display.innerHTML = display.textContent.trim()+button.value;
-    }) 
-});
-
-console.log(buttons);
+    button.addEventListener('click', () => {
+        if(button.value == '-' || button.value == '+' || button.value == '*' || button.value == '/' ){
+            // display.textContent = "";
+            // console.log(button.value);
+            switch(button.value){
+                case '+': a = Number(display);
+                          
+            }
+        }else if(button.value == '0' || button.value == '1' || button.value == '2' || button.value == '3' || button.value == '4' || button.value == '5' || button.value == '6' || button.value == '7' || button.value == '8' || button.value == '9'){
+            console.log(button.value);
+        }else if(button.value == 'Clear'|| button.value =='Reset'){
+            switch(button.value){
+                case 'Reset' : display.innerHTML = "";
+                case 'Clear' : removeLastIndex(display.textContent);
+            }
+        }
+    })
+})
 //functions
+function removeLastIndex(node){
+    return node.textContent.splice(0,node.textContent.length-1);
+}
 function add(a,b){
     return a+b;
 }
