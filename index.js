@@ -18,29 +18,16 @@ function divide(a,b){
     }
     return "ERROR";
 }
-function operate(button,a,b){
-    switch(button.value){
+function operate(buttonValue,a,b){
+    switch(buttonValue){
         case '+': 
-                    a = Number.parseFloat(display.textContent);
-                    display.textContent = '';
-                    display.textContent = add(a,b);
-                    break;
+                    return add(a,b);
         case '-': 
-                    a = Number.parseFloat(display.textContent);
-                    display.textContent = '';
-                    display.textContent = subtract(a,b);
-                    break;
-        case '*':   b = 1;
-                    a = Number.parseFloat(display.textContent);
-                    display.textContent = '';
-                    display.textContent = multiply(a,b);
-                    a = Number.parseFloat(display.textContent);
-                    break;
-        case '/':   b = 1;
-                    display.textContent = divide(a,b);
-                    a = Number.parseFloat(display.textContent);
-                    break;
-        default: display.textContent = '';
+                    return subtract(a,b);
+        case '*':   
+                    return multiply(a,b);
+        case '/':  
+                    return divide(a,b);
     }
 }
 //main
@@ -48,11 +35,13 @@ let display = document.querySelector('.screen');
 let buttons = document.querySelectorAll('button');
 let a = 0;
 let b = 0;
-let answer = 0;
+let operatorUsed;
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         if(button.value == '-' || button.value == '+' || button.value == '*' || button.value == '/' ){
-            operate(button,a,b);
+            a = Number.parseFloat(display.textContent);
+            display.textContent = '';
+            operatorUsed = button.value;
         }else if(button.value == '0' || button.value == '1' || button.value == '2' || button.value == '3' || button.value == '4' || button.value == '5' || button.value == '6' || button.value == '7' || button.value == '8' || button.value == '9'){
             display.textContent += button.value;
         }else if(button.value == 'Clear'|| button.value =='Reset'){
@@ -65,10 +54,12 @@ buttons.forEach(button => {
                                 break;
             }
         }else if(button.value == '(-)'){
-                display.textContent = Number.parseFloat(display.textContent) * -1;
+                display.textContent += '-';
         }else if(button.value == '.'){
             display.textContent += '.';
-            button.setAttribute('disabled','');
+        }else if(button.value == '='){
+            b = Number.parseFloat(display.textContent);
+            display.textContent = operate(operatorUsed,a,b);
         }
     })
 });
